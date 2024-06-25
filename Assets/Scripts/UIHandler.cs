@@ -27,4 +27,5 @@ public class UIHandler : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
 }
