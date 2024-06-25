@@ -376,8 +376,8 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1385784397}
-        m_TargetAssemblyTypeName: SavedData, Assembly-CSharp
+      - m_Target: {fileID: 1026044226}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: SetDisplayName
         m_Mode: 0
         m_Arguments:

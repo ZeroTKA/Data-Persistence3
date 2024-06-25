@@ -17,12 +17,4 @@ public class SavedData : MonoBehaviour
         DontDestroyOnLoad(Instance);
     }
 
-    public void SetDisplayName(string s)
-    {
-        DisplayName = s;
-        Debug.Log(s +" is s");
-        Debug.Log(DisplayName);
-    }
-
-
 }

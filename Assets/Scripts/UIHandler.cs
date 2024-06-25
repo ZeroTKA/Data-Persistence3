@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
-
+    public void SetDisplayName(string s)
+    {
+        SavedData.Instance.DisplayName = s;
+        Debug.Log(s + " is s");
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);
