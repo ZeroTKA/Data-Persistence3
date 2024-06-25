@@ -16,4 +16,13 @@ public class SavedData : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(Instance);
     }
+
+    public void SetDisplayName(string s)
+    {
+        DisplayName = s;
+        Debug.Log(s +" is s");
+        Debug.Log(DisplayName);
+    }
+
+
 }
