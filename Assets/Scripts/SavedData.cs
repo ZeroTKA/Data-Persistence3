@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SavedData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static SavedData Instance;
+    public string DisplayName;
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(Instance);
     }
 }
