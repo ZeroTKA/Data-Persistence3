@@ -6,6 +6,7 @@ public class SavedData : MonoBehaviour
 {
     public static SavedData Instance;
     public string DisplayName;
+    public bool HasEnteredAName;
     private void Awake()
     {
         if(Instance != null)

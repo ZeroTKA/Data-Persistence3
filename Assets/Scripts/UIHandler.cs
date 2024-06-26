@@ -7,12 +7,29 @@ public class UIHandler : MonoBehaviour
 {
     public void SetDisplayName(string s)
     {
-        SavedData.Instance.DisplayName = s;
-        Debug.Log(s + " is s");
+        if (s != null && !s.Trim().Equals(""))
+        {
+            SavedData.Instance.HasEnteredAName = true;
+            SavedData.Instance.DisplayName = s;
+            Debug.Log("HasName is True");
+        }
+        else
+        {
+            SavedData.Instance.HasEnteredAName = false;
+            Debug.Log("HasName is False");
+            //show UI that says invalid characters?
+        }
     }
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        if(SavedData.Instance.HasEnteredAName)
+        { 
+            SceneManager.LoadScene(1); 
+        }
+        else 
+        {
+            //do something visual? 
+        }
     }
 
     public void QuitGame()
