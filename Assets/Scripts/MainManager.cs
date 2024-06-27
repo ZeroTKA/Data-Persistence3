@@ -32,10 +32,13 @@ public class MainManager : MonoBehaviour
         {
             // code for the users display name
         }
+        //controls how many go horizontal
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
         int[] pointCountArray = new [] {1,1,2,2,5,5};
+        // LineCount is being weird. Changing it above does nothing.
+        // Hardcoding the same number does what you expect. It's being messed with somewhere?
         for (int i = 0; i < LineCount; ++i)
         {
             for (int x = 0; x < perLine; ++x)
