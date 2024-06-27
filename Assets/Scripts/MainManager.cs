@@ -76,6 +76,10 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
+        if(m_Points > m_CurrentHighScore)
+        {
+            SetHighScoreText($"New Highscore: {m_Points} !!!");
+        }
     }
 
     public void GameOver()
