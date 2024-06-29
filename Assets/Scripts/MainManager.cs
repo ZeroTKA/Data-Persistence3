@@ -53,6 +53,7 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {
+        // do I even need this if we have a start button?
         if (!m_Started)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -79,6 +80,7 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
+        // whenever we add points, check for highscore and if it is the new high score, reflect that.
         if(m_Points > m_CurrentHighScore)
         {
             SetHighScoreText($"New Highscore: {m_Points} !!!");
@@ -101,11 +103,13 @@ public class MainManager : MonoBehaviour
     }
 
     [System.Serializable]
+    // data I want to save between scenes
     class SavedHighScoreData
     {
         public int Score;
         public string DisplayName;
     }
+    //saving data long term. Just
     public void SaveScore()
     {
         SavedHighScoreData data = new SavedHighScoreData();
@@ -116,6 +120,7 @@ public class MainManager : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/highscore.json", json);
     }
 
+    // Loading longterm data
     public void LoadScore()
     {
         string path = Application.persistentDataPath + "/highscore.json";
@@ -126,12 +131,15 @@ public class MainManager : MonoBehaviour
             m_CurrentHighScore = data.Score;
             m_HighScoreName = data.DisplayName;
         }
+        // for first time running the game.
         else
         {
+            
             m_CurrentHighScore = 0;
             m_HighScoreName = "Nobody";
         }
     }
+    //testing out high score related things.
     public void ResetHighScore()
     {
         SavedHighScoreData data = new SavedHighScoreData();
