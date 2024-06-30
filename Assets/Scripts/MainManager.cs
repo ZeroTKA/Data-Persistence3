@@ -8,6 +8,11 @@ using UnityEngine.UI;
 public class MainManager : MonoBehaviour
 {
     [SerializeField] Text _HighScoreTextField;
+    [SerializeField] GameObject _GameOverBackground;
+    [SerializeField] GameObject _MainMenuButton;
+    [SerializeField] GameObject _RestartButton;
+    [SerializeField] GameObject _QuitButton;
+  
     public Brick BrickPrefab;
     public int LineCount = 6;
     public Rigidbody Ball;
@@ -87,6 +92,7 @@ public class MainManager : MonoBehaviour
         }
     }
 
+    //The restart function just reloads the scene completely. So there's no need to disable any menu items. Is that even good? 
     public void GameOver()
     {
         m_GameOver = true;
@@ -96,6 +102,13 @@ public class MainManager : MonoBehaviour
         }
 
         GameOverText.SetActive(true);
+        //black background with opacity
+        _GameOverBackground.SetActive(true);
+        _MainMenuButton.SetActive(true);
+        _RestartButton.SetActive(true);
+        _QuitButton.SetActive(true);
+   
+
     }
     private void SetHighScoreText(string text)
     {
